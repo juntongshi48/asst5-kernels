@@ -1,6 +1,6 @@
 export PYTHONPATH="/data/jiaqi/juntong/asst5-kernels/problems:$PYTHONPATH"
 python wrap_cuda_submission.py
-mode=$1
+mode=$1 # test/benchmark/profile
 debug=$2
 gpuid=6
 if [ "$debug" = "true" ]; then
