@@ -3,5 +3,8 @@ if [ ! -d ${output_path} ]; then
     mkdir -p ${output_path}
 fi
 
-export PATH="$PATH:/data/jiaqi/juntong/asst5-kernels/binarys"
-popcorn-cli submit --leaderboard flash_attn_turbo --mode profile problems/flashattention/wrap_cuda_submission.py
+export PATH="$PATH:/Users/juntongshi/Desktop/cs149/asst5-kernels/binary"
+cd problems/flashattention
+python wrap_cuda_submission.py
+cd ../../
+popcorn-cli submit --leaderboard flashattention --mode profile problems/flashattention/wrap_cuda_submission.py
