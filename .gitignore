@@ -1,6 +1,8 @@
 submission.py
 target/
 scratch.md
+setup.sh
+binary/
 
 dump/
 __pycache__/

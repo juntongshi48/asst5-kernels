@@ -1,3 +1,10 @@
-export PYTHONPATH="<path-to-asst5>/problems:$PYTHONPATH"
+export PYTHONPATH="/data/jiaqi/juntong/asst5-kernels/problems:$PYTHONPATH"
 python wrap_cuda_submission.py
-CUDA_VISIBLE_DEVICES=3 python ../eval.py test test_cases/test.txt
+mode=$1
+debug=$2
+gpuid=6
+if [ "$debug" = "true" ]; then
+    CUDA_VISIBLE_DEVICES=${gpuid} python ../eval.py ${mode} test_cases/test_correctness.txt
+else
+    CUDA_VISIBLE_DEVICES=${gpuid} python ../eval.py ${mode} test_cases/test.txt
+fi
